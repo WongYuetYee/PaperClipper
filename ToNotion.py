@@ -190,8 +190,8 @@ def send_notion(paper):
                                     "text": {"content": paper['code']}}]},
             "Location": {"rich_text": [{"type": "text",
                                     "text": {"content": paper['location']}}]},
-            "未分类": {"type": "checkbox",
-                    "checkbox": True}
+            "Confirm": {"type": "checkbox",
+                    "checkbox": False}
         },
         "children": [
             {
