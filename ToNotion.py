@@ -166,7 +166,7 @@ def send_notion(paper):
     url = "https://api.notion.com/v1/pages"
     content = {
  # attention: insert your own database_id and replace the "please_input_your_own_database_id"
-        "parent": {"type": "database_id", "database_id": "please_input_your_own_database_id"},
+        "parent": {"type": "database_id", "database_id": "$YOUR_DATABASE_ID$"},
         "properties": {
             "URL": {"url": paper['url']},
             "Name": {"title": [{"type": "text",
@@ -208,7 +208,7 @@ def send_notion(paper):
         "Notion-Version": "2022-02-22",
         "Content-Type": "application/json",
    # attention: please replace it with your own notionAPI robot ID
-        "Authorization": "Bearer secret_xxxxxxxxxxxxxxxxxxxx"
+        "Authorization": "$YOUR_INTEGRATION_TOKEN$"
     }
     response = requests.request("POST", url, json=content, headers=headers)
     if response.status_code != 200:
